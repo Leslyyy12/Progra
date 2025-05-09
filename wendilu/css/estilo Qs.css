@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    font-family: sans-serif;
+}
+body {
+    background-color: rgb(184, 46, 46);
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: beige;
+}
+
+.logo {
+    max-width: 5rem;    
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: rgb(207, 5, 5);
+}
+
+.abrir-menu,
+.cerrar-menu { 
+    display: none;
+}
+@media screen and (max-width:550px) {
+    .abrir-menu,
+    .cerrar-menu {
+        display: block;
+        border: 0;
+        font-size: 1.25rem;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .abrir-menu {
+        color: rgb(212, 5, 5);
+    }
+
+    .cerrar-menu {
+        color: rgb(255, 255, 255);;
+    }
+    .nav {
+        opacity: 0;
+        visibility: hidden;
+
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 1rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(175, 18, 18);
+        padding: 2rem;
+        box-shadow: 0 0 0 100vmax rgba(223, 39, 39, 0.747);
+    }
+
+    .nav.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-list {
+        flex-direction: column;
+        align-items: end;
+    }
+    .nav-list li a {
+        color: rgb(255, 255, 255);
+    }
+} 
+
+.titulo {
+    color: aliceblue;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 50px;
+}
+
+.slider-box {
+    width: 1280px;
+    height: auto;
+    margin: 50px auto 0;
+}
+
+.slider-box ul {
+    display: flex;
+    padding: 0;
+    width: 600%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-box img {
+    width: 100%;
+}
+
+
+@keyframes slide {
+    0% {margin-left: 0; }
+    20% {margin-left: 0; }
+
+    25% {margin-left: -100%; }
+    45% {margin-left: -100%; }
+
+    50% {margin-left: -200%; }
+    70% {margin-left: -200%; }
+
+    75% {margin-left: -300%; }
+    100% {margin-left: -300%; }
+}
+
+@media(max-width:991px) {
+ 
+    body {
+        padding: 30px;
+    }
+
+    .slider-box {
+        width: 100%;
+    }
+
+    .texto {
+        top: 50px;
+        padding: 0;
+    }
+}
+
